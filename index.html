@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            background-image: url('D:/TEWE22/PROJECTS/index.html/nature.jpg');
+            background-size: 100%;
+            background-position: 0px 670px;
+            background-attachment: fixed;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #container{
+            position: relative;
+            width: 40%;
+            height: 80%;
+            background-color: rgba(0, 0, 0, 0.76);
+            border-radius: 2%;
+            box-shadow: 5px 5px 5px black;
+        }
+        #display{
+            width: 75%;
+            height: 40px;
+            position: absolute;
+            top: 5%;
+            left: 9%;
+            background-color: black;
+            color: white;
+            font-size: 25px;
+            padding: 5px;
+            outline: none;
+            border: groove 10px rgb(156, 126, 126); 
+            box-shadow: 2px 2px 5px black;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .a{
+            width: 15%;
+            height: 6vh;
+            background-color: black;
+            color: white;
+            font-size: 24px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 2px black;
+            border: 2px solid white;
+            margin: 5px;
+            margin-top: 20px;
+            position: relative;
+            top: 15vh;
+            left: 5vw;
+        }
+        #clear{
+            position: absolute;
+            bottom: 80px;
+            width: 30%;
+            height: 6vh;
+            font-size: 24px;
+            left: 5vw;
+            background-color: rgb(88, 88, 109);
+            color: white;
+            border: 2px solid white;
+            border-radius: 5px;
+            box-shadow: 2px 2px 2px black;
+        }
+        #equ{
+            position: absolute;
+            bottom: 80px;
+            width: 36%;
+            height: 6vh;
+            font-size: 24px;
+            left: 18vw;
+            background-color: rgb(88, 88, 109);
+            color: white;
+            border: 2px solid white;
+            border-radius: 5px;
+            box-shadow: 2px 2px 2px black;
+        }
+        .a:hover{
+            border-radius: 20px;
+            background-color: rgb(16, 174, 236);
+        }
+        #equ:hover{
+            border-radius: 20px;
+            background-color: green;
+        }
+        #clear:hover{
+            border-radius: 20px;
+            background-color: red;
+        }
+        #display:hover{
+            background-color: white;
+            color: black;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+    <form name="cform">
+        <input name="Ans" id="display">
+        <br>
+        <input onmousedown="clicksound()" class="a" type="button" value="1" onclick="cform.Ans.value +='1'">
+        <input onmousedown="clicksound()" class="a" type="button" value="2" onclick="cform.Ans.value +='2'">
+        <input onmousedown="clicksound()" class="a" type="button" value="3" onclick="cform.Ans.value +='3'">
+        <input onmousedown="clicksound()" class="a" type="button" value="+" onclick="cform.Ans.value +='+'">
+        <br>
+        <input onmousedown="clicksound()" class="a" type="button" value="4" onclick="cform.Ans.value +='4'">
+        <input onmousedown="clicksound()" class="a" type="button" value="5" onclick="cform.Ans.value +='5'">
+        <input onmousedown="clicksound()" class="a" type="button" value="6" onclick="cform.Ans.value +='6'">
+        <input onmousedown="clicksound()" class="a" type="button" value="-" onclick="cform.Ans.value +='-'">
+        <br>
+        <input onmousedown="clicksound()" class="a" type="button" value="7" onclick="cform.Ans.value +='7'">
+        <input onmousedown="clicksound()" class="a" type="button" value="8" onclick="cform.Ans.value +='8'">
+        <input onmousedown="clicksound()" class="a" type="button" value="9" onclick="cform.Ans.value +='9'">
+        <input onmousedown="clicksound()" class="a" type="button" value="x" onclick="cform.Ans.value +='*'">
+        <br>
+        <input onmousedown="clicksound()" class="a" type="button" value="%" onclick="cform.Ans.value +='%'">
+        <input onmousedown="clicksound()" class="a" type="button" value="0" onclick="cform.Ans.value +='0'">
+        <input onmousedown="clicksound()" class="a" type="button" value="." onclick="cform.Ans.value +='.'">
+        <input onmousedown="clicksound()" class="a" type="button" value="/" onclick="cform.Ans.value +='/'">
+        <br>
+        <input onmousedown="clicksoundeq()" id="equ" type="button" value="=" onclick="cform.Ans.value =eval(cform.Ans.value)">
+        <input onmousedown="clicksoundc()" id="clear" type="button" value="C" onclick="cform.Ans.value =''">
+        <br>
+    </form>
+    <img src=""
+</div>
+<script>
+    function clicksound()
+    {
+        var clksound=new Audio()
+        clksound.src="./msg.mp3"
+        clksound.play()
+    }
+    function clicksoundc()
+    {
+        var clksound=new Audio()
+        clksound.src="./bullet.mp3"
+        clksound.play()
+    }
+    function clicksoundeq()
+    {
+        var clksound=new Audio()
+        clksound.src="./=.mp3"
+        clksound.play()
+    }
+</script>
+</body>
+</html>
